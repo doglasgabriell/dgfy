@@ -39,8 +39,8 @@ const SignUpHeader = () => {
               className="font-bold cursor-pointer hover:scale-110 transition-all"
               key={items.id}
               style={{
-                background: items.style ? "white" : "black",
-                color: items.style ? "black" : "white",
+                background: items.style ? "red" : "none",
+                color: items.style ? "white" : "white",
                 padding: items.style ? "10px 30px" : "0",
                 borderRadius: items.style ? "50px" : "0",
                 fontFamily: items.style ? "arial" : "arial",
