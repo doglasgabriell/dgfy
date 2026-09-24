@@ -1,12 +1,12 @@
 import { IoMdAdd } from "react-icons/io";
 
-const SingUpAside = () => {
+const SingUpAside = ({cardBtn}) => {
   return (
-    <aside className="flex flex-col p-3 w-100 bg-linear-to-b from-zinc-800 to-zinc-950 gap-4 rounded-lg">
+    <aside className="flex flex-col sticky p-3 w-100 bg-linear-to-b from-zinc-800 to-zinc-950 gap-4 rounded-lg">
       <div className="text-white p-4">
         <header className="flex justify-between items-center font-bold">
           <p>Sua biblioteca</p>
-          <button className="bg-zinc-600 p-2 rounded-3xl flex items-center gap-1 cursor-pointer hover:bg-zinc-500 transition-colors">
+          <button onClick={cardBtn} className="bg-zinc-600 p-2 rounded-3xl flex items-center gap-1 cursor-pointer hover:bg-zinc-500 transition-colors">
             <IoMdAdd size={20} /> Criar
           </button>
         </header>
@@ -17,7 +17,7 @@ const SingUpAside = () => {
           <div className="text-white p-4 bg-zinc-700/80 rounded-sm">
             <p className="font-bold mb-1">Crie sua primeira playlist</p>
             <p>É fácil, vamos te ajudar</p>
-            <button className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full mt-5 font-bold hover:bg-zinc-400 transition-colors">
+            <button onClick={cardBtn} className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full mt-5 font-bold hover:bg-zinc-400 transition-colors">
               Criar playlist
             </button>
           </div>
@@ -26,13 +26,13 @@ const SingUpAside = () => {
           <div className="text-white p-4 bg-zinc-700/80 rounded-sm">
             <p className="font-bold mb-1">Que tal seguir um podcast novo?</p>
             <p>Avisaremos você sobre novos episódios.</p>
-            <button className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full mt-5 font-bold hover:bg-zinc-400 transition-colors">
+            <button onClick={cardBtn} className="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full mt-5 font-bold hover:bg-zinc-400 transition-colors">
               Explore podcasts
             </button>
           </div>
         </div>
       </div>
-      <div className="flex flex-1 text-white opacity-55 items-end">
+      <div className="flex h-full text-white opacity-55 items-end">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magni
           quod officiis obcaecati nulla ducimus maiores deserunt quaerat sunt,
