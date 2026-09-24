@@ -16,7 +16,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="relative">
       {/* Adicioa o card na tela se o user clicar em um botão antes de se fzr o "login" */}
       {cardsign && <Cardsignup hiddenCard={showCardSign} />}
       <div className="h-screen flex flex-col bg-zinc-950">
@@ -83,7 +83,7 @@ function App() {
         </div>
         <FooterSignup />
       </div>
-    </>
+    </div>
   );
 }
 
