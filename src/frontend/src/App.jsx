@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import Artists from "./components/Artists";
 import FooterSignup from "./components/layouts/footers/FooterSignup";
 import SignUpHeader from "./components/layouts/signup/SignUpHeader";
@@ -8,12 +10,38 @@ import artistsAPI from "./data/artistsAPI";
 import songsAPI from "./data/songsAPI";
 import Cardsignup from "./components/cards/Cardsignup";
 
+// import icons
+import { LoaderCircle } from "lucide-react";
+
 function App() {
   // Use state + funcao para setar o card de se inscrever
   const [cardsign, setCardsign] = useState(false);
   function showCardSign() {
     setCardsign(!cardsign);
   }
+
+  // Use effect para buscar a api
+  const [musicas, setMusicas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [erro, setErro] = useState(null);
+
+  useEffect(() => {
+    async function getSongs() {
+      try {
+        const { data } = await axios.get(
+          "http://127.0.0.1:8000/api/listar-musicas",
+        );
+
+        setMusicas(data);
+      } catch (error) {
+        setErro("Erro na hora de fazer a busca");
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getSongs();
+  }, []);
 
   return (
     <div className="relative">
@@ -23,10 +51,19 @@ function App() {
         <SignUpHeader />
         <div className="flex flex-1 gap-2 p-2 overflow-hidden">
           <SingUpAside cardBtn={showCardSign} />
-          <main className="flex flex-1 flex-col p-10 overflow-y-auto bg-linear-to-b from-zinc-800 to-zinc-950 rounded-lg">
-
-
-
+          <main className="flex flex-1 flex-col p-10  overflow-y-auto bg-linear-to-b from-zinc-800 to-zinc-950 rounded-lg relative">
+            {loading && (
+              <div className="w-full h-full bg-zinc-800/90 backdrop-blur-sm inset-0 absolute z-10 flex flex-col items-center justify-center">
+                <LoaderCircle
+                  color="#e01b24"
+                  size={350}
+                  className="animate-spin"
+                />
+                <p className="text-4xl text-red-600 font-bold animate-pulse">
+                  Loading...
+                </p>
+              </div>
+            )}
             <div className="flex flex-col gap-1">
               <div className="flex justify-between text-white items-center mb-5">
                 <h2 className="text-2xl font-bold cursor-pointer hover:underline transition-all">
@@ -50,9 +87,6 @@ function App() {
                 ))}
               </div>
             </div>
-
-
-
             <div className="flex flex-col gap-1">
               <div className="flex justify-between text-white items-center mb-5">
                 <h2 className="text-2xl font-bold cursor-pointer hover:underline transition-all">
@@ -76,9 +110,6 @@ function App() {
                 ))}
               </div>
             </div>
-
-
-
           </main>
         </div>
         <FooterSignup />
