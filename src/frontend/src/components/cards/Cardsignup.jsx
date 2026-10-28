@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Cardsignup = ({hiddenCard}) => {
   return (
       <div className="w-dvw h-dvh absolute  flex justify-center items-center bg-zinc-700/50 z-10 backdrop-blur-sm">
@@ -15,9 +17,11 @@ const Cardsignup = ({hiddenCard}) => {
                 Escute com uma conta gratuíta no dgfy
               </p>
               <div className="flex flex-col items-center gap-4">
-                <button className="bg-white p-3 rounded-full text-red-700 font-bold hover:scale-110 transition-all cursor-pointer">
-                  Inscreva-se grátis
-                </button>
+                <Link to="/login">
+                  <button className="bg-white p-3 rounded-full text-red-700 font-bold hover:scale-110 transition-all cursor-pointer">
+                    Inscreva-se grátis
+                  </button>
+                </Link>
                 <button className="bg-zinc-600/0 p-3 rounded-full text-white font-bold border-2 border-white hover:shadow-xl hover:border-4 transition-all cursor-pointer">
                   {" "}
                   Baixe o app
