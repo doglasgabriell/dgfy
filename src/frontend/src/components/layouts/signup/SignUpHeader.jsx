@@ -2,19 +2,6 @@ import { BsSpotify } from "react-icons/bs";
 import { IoHomeSharp } from "react-icons/io5";
 
 const SignUpHeader = () => {
-  const menu = [
-    {
-      id: 1,
-      label: "Inscrever-se",
-      style: false,
-    },
-    {
-      id: 2,
-      label: "Entrar",
-      style: true,
-    },
-  ];
-
   return (
     <header className="flex h-18 bg-zinc-950 items-center p-2">
       <div className="w-1/3 p-4">
@@ -34,22 +21,13 @@ const SignUpHeader = () => {
 
       <div className="w-1/3">
         <nav className="flex text-white justify-end gap-8">
-          {menu.map((items) => (
-            <button
-              className="font-bold cursor-pointer hover:scale-110 transition-all"
-              key={items.id}
-              style={{
-                background: items.style ? "red" : "none",
-                color: items.style ? "white" : "white",
-                padding: items.style ? "10px 30px" : "0",
-                borderRadius: items.style ? "50px" : "0",
-                fontFamily: items.style ? "arial" : "arial",
-                opacity: items.style ? "100%" : "70%",
-              }}
-            >
-              {items.label}
-            </button>
-          ))}
+          <button className="text-white font-bold opacity-70 hover:opacity-100 transition-all cursor-pointer">
+            Inscrever-se
+          </button>
+
+          <button className="bg-red-600 px-4 py-2 rounded-full font-bold hover:bg-red-500 transition-all cursor-pointer">
+            Entrar
+          </button>
         </nav>
       </div>
     </header>
