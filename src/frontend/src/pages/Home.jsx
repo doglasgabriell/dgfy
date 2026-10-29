@@ -37,7 +37,7 @@ const Home = () => {
       {loading && (
         <div className="w-full h-full bg-zinc-800/90 backdrop-blur-sm inset-0 absolute z-10 flex flex-col items-center justify-center">
           <LoaderCircle color="#e01b24" size={350} className="animate-spin" />
-          <p className="text-4xl text-red-600 font-bold animate-pulse">
+          <p className="text-4xl text-orange-400 font-bold animate-pulse">
             Loading...
           </p>
         </div>

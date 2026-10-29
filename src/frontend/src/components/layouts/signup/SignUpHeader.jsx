@@ -6,7 +6,7 @@ const SignUpHeader = () => {
   return (
     <header className="flex h-18 bg-zinc-950 items-center p-2">
       <div className="w-1/3 p-4">
-        <BsSpotify color="red" size={40} />
+        <BsSpotify className="text-orange-500" size={40} />
       </div>
 
       <div className="w-1/3 flex items-center justify-center gap-4">
@@ -29,7 +29,7 @@ const SignUpHeader = () => {
           </Link>
 
           <Link to="/login">
-            <button className="bg-red-600 px-4 py-2 rounded-full font-bold hover:bg-red-500 transition-all cursor-pointer">
+            <button className="bg-orange-500 px-4 py-2 rounded-full font-bold hover:bg-red-500 transition-all cursor-pointer">
               Entrar
             </button>
           </Link>
