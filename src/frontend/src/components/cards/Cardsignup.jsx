@@ -19,13 +19,15 @@ const Cardsignup = ({hiddenCard}) => {
               <div className="flex flex-col items-center gap-4">
                 <Link to="/login">
                   <button className="bg-white p-3 rounded-full text-red-700 font-bold hover:scale-110 transition-all cursor-pointer">
-                    Inscreva-se grátis
+                    Free Sign up
                   </button>
                 </Link>
-                <button className="bg-zinc-600/0 p-3 rounded-full text-white font-bold border-2 border-white hover:shadow-xl hover:border-4 transition-all cursor-pointer">
-                  {" "}
-                  Baixe o app
-                </button>
+                <Link to="/login">
+                  <button className="bg-zinc-600/0 p-3 rounded-full text-white font-bold border-2 border-white hover:shadow-xl hover:border-4 transition-all cursor-pointer">
+                    {" "}
+                    Sign in
+                  </button>
+                </Link>
                 <span onClick={hiddenCard} className="text-white/70 font-bold cursor-pointer hover:text-zinc-100 transition-all">
                   Fechar
                 </span>

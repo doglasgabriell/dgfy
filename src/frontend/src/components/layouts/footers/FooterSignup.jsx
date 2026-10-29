@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FooterSignup = () => {
   return (
     <footer className="flex bg-linear-to-l to-red-800 from-blue-800 h-18 w-full sticky items-center justify-around px-4">
@@ -10,9 +12,11 @@ const FooterSignup = () => {
       </div>
 
       <div className="w-1/2  flex justify-end">
-        <button className="bg-zinc-100 p-2 px-8 rounded-full font-bold hover:bg-zinc-300 hover:scale-105 transition-all cursor-pointer">
-          Inscreva-se grátis
-        </button>
+        <Link to="/register">
+          <button className="bg-zinc-100 p-2 px-8 rounded-full font-bold hover:bg-zinc-300 hover:scale-105 transition-all cursor-pointer">
+            Inscreva-se grátis
+          </button>
+        </Link>
       </div>
     </footer>
   );

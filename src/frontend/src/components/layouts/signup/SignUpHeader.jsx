@@ -1,5 +1,6 @@
 import { BsSpotify } from "react-icons/bs";
 import { IoHomeSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const SignUpHeader = () => {
   return (
@@ -20,14 +21,18 @@ const SignUpHeader = () => {
       </div>
 
       <div className="w-1/3">
-        <nav className="flex text-white justify-end gap-8">
-          <button className="text-white font-bold opacity-70 hover:opacity-100 transition-all cursor-pointer">
-            Inscrever-se
-          </button>
+        <nav className="flex text-white justify-end gap-8 items-center">
+          <Link to="/register">
+            <button className="text-white font-bold opacity-70 hover:opacity-100 transition-all cursor-pointer">
+              Inscrever-se
+            </button>
+          </Link>
 
-          <button className="bg-red-600 px-4 py-2 rounded-full font-bold hover:bg-red-500 transition-all cursor-pointer">
-            Entrar
-          </button>
+          <Link to="/login">
+            <button className="bg-red-600 px-4 py-2 rounded-full font-bold hover:bg-red-500 transition-all cursor-pointer">
+              Entrar
+            </button>
+          </Link>
         </nav>
       </div>
     </header>
