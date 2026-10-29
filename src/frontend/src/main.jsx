@@ -9,6 +9,7 @@ import ErrorPage from "./routes/ErrorPage";
 
 // Import do react router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Register from "./pages/Register.jsx";
 
 // função browserRouter
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/register",
+    element: <Register />
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
