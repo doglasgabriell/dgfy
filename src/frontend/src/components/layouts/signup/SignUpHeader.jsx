@@ -15,7 +15,7 @@ const SignUpHeader = () => {
         </button>
         <input
           type="text"
-          className="bg-zinc-800 p-3 text-white placeholder:font-bold rounded-full w-full focus:outline-3 focus:outline-red-700"
+          className="bg-zinc-800 p-3 text-white placeholder:font-bold rounded-full w-full focus:outline-3 focus:outline-orange-500"
           placeholder="O que você deseja ouvir?"
         />
       </div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const FooterSignup = () => {
   return (
-    <footer className="flex bg-linear-to-l to-red-800 from-blue-800 h-18 w-full sticky items-center justify-around px-4">
+    <footer className="flex bg-linear-to-l to-red-900 from-orange-600 h-18 w-full sticky items-center justify-around px-4">
       <div className="flex flex-col items-start w-1/2">
         <p className="text-zinc-200 font-bold">Pré visualização do dgfy</p>
         <p className="text-zinc-200/98">
