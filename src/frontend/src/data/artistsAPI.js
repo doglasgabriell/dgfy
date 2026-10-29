@@ -1,45 +1,45 @@
 const artistsAPI = [
     {
         id: 1,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
+        cover: "/src/assets/coverArtists/Doglas & lavinia.png",
         name: "Dôglas & Lavínia",
-        type: "Artista"
+        type: "Love Song"
     },
     {
         id: 2,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
-        name: "Gleice & Dalmo",
-        type: "Artista"
+        cover: "/src/assets/coverArtists/alee.jfif",
+        name: "Alee",
+        type: "Trap"
     },
     {
         id: 3,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
-        name: "Kyan",
-        type: "Artista",
+        cover: "/src/assets/coverArtists/don toliver.webp",
+        name: "Don Toliver",
+        type: "Trap",
     },
     {
         id: 4,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
-        name: "Matuê",
-        type: "Artista"
+        cover: "/src/assets/coverArtists/kyan.jpg",
+        name: "Kyan",
+        type: "Trap"
     },
     {
         id: 5,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
-        name: "Teto",
-        type: "Artista"
+        cover: "/src/assets/coverArtists/matue.jfif",
+        name: "Matuê",
+        type: "Trap"
     },
     {
         id: 6,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
+        cover: "/src/assets/coverArtists/dfideliz.jfif",
         name: "Dfideliz",
-        type: "Artista"
+        type: "Trap"
     },
     {
         id: 7,
-        cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5dDZ8--gi2iNNk6zp2b1PbckJjiPfWPLOz_iyEF5tA&s=10",
-        name: "Massaru",
-        type: "Artista"
+        cover: "/src/assets/coverArtists/central cee.jfif",
+        name: "Central cee",
+        type: "Trap Uk"
     },
     {
         id: 8,

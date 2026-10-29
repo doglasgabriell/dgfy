@@ -29,7 +29,7 @@ const Cardsignup = ({hiddenCard}) => {
                   </button>
                 </Link>
                 <span onClick={hiddenCard} className="text-white/70 font-bold cursor-pointer hover:text-zinc-100 transition-all">
-                  Fechar
+                  Close
                 </span>
               </div>
             </div>
