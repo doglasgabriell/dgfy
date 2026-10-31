@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 
 // imports videos
 import IchigoGetsuga from "../assets/videos/getsuga.gif";
+import ToastSucess from "../components/toasts/ToastSucess";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   // VIEW PASSWORD FUNCION AND USESTATE
@@ -38,9 +40,7 @@ const Login = () => {
                 size={120}
               />
             </div>
-            <h1 className="text-6xl font-bold animate-pulse">
-              Welcome Back
-            </h1>
+            <h1 className="text-6xl font-bold animate-pulse">Welcome Back</h1>
           </div>
           {/* Body form */}
           <div className="flex flex-col gap-3 w-2xl">
@@ -75,12 +75,10 @@ const Login = () => {
                 )}
               </button>
             </div>
-            <button
-              type="button"
-              className="font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"
-            >
-              Continue
-            </button>
+
+            <ToastSucess className={"font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"} contextButton={"Continue"} TextoToast={"Logou com sucesso..."} />
+
+            <ToastContainer />
           </div>
           {/* dont have account */}
           <div className="flex flex-col gap-4 justify-center items-center">
