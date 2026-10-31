@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import UraharaBankai from "../assets/videos/urahara.gif";
+import ToastSucess from "../components/toasts/ToastSucess";
+import { ToastContainer } from "react-toastify";
 
 const Register = () => {
   const [viewPassword, setViewPassword] = useState(false);
@@ -78,11 +80,13 @@ const Register = () => {
               </button>
             </div>
             <button
+              onClick={ToastSucess("You're registred")}
               type="button"
               className="font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"
             >
               Sign up
             </button>
+            <ToastContainer />
           </div>
           {/* dont have account */}
           <div className="flex flex-col gap-4 justify-center items-center">

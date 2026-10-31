@@ -75,10 +75,14 @@ const Login = () => {
                 )}
               </button>
             </div>
-
-            <ToastSucess className={"font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"} contextButton={"Continue"} TextoToast={"Logou com sucesso..."} />
-
-            <ToastContainer />
+            <button
+              onClick={ToastSucess("you're logged")}
+              type="button"
+              className="font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"
+            >
+              Continue
+            </button>
+            <ToastContainer />  
           </div>
           {/* dont have account */}
           <div className="flex flex-col gap-4 justify-center items-center">

@@ -1,6 +1,8 @@
 import { BsSpotify } from "react-icons/bs";
 import { IoHomeSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import ToastInfo from "../../toasts/ToastInfo";
+import { ToastContainer } from "react-toastify";
 
 const SignUpHeader = () => {
   return (
@@ -10,9 +12,10 @@ const SignUpHeader = () => {
       </div>
 
       <div className="w-1/3 flex items-center justify-center gap-4">
-        <button className="bg-zinc-800 p-3 rounded-full items-center justify-center hover:scale-105 transition-all cursor-pointer">
+        <button onClick={() => ToastInfo("You're already on the home page")} className="bg-zinc-800 p-3 rounded-full items-center justify-center hover:scale-105 transition-all cursor-pointer">
           <IoHomeSharp color="white" size={30} />
         </button>
+        <ToastContainer />
         <input
           type="text"
           className="bg-zinc-800 p-3 text-white placeholder:font-bold rounded-full w-full focus:outline-3 focus:outline-orange-500"

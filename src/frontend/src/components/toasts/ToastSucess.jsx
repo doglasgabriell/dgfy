@@ -1,8 +1,8 @@
 import { toast, Bounce } from "react-toastify";
 
-const ToastSucess = ({ TextoToast, contextButton, className }) => {
-  function sucess() {
-    toast.success(TextoToast, {
+const ToastSucess = (texto) => {
+  const success = () =>
+    toast.success(texto, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -13,13 +13,8 @@ const ToastSucess = ({ TextoToast, contextButton, className }) => {
       theme: "light",
       transition: Bounce,
     });
-  }
 
-  return (
-    <button type="button" onClick={sucess} className={className}>
-      {contextButton}
-    </button>
-  );
+  return success;
 };
 
 export default ToastSucess;
