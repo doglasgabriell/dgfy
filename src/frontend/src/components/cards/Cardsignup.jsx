@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
+import ichigoVastoLordeGif from "../../assets/videos/ichigo-vasto-lorde.gif"
+
 const Cardsignup = ({ hiddenCard }) => {
   return (
     // Fundo de trás preenchendo tudo com blur
     <div className="w-dvw h-dvh absolute  flex justify-center items-center bg-zinc-700/50 z-10 backdrop-blur-sm">
-      <div className="flex justify-center  bg-[url(https://i.redd.it/k793lw4omo2h1.gif)] bg-cover items-center h-100 w-150 shadow-xl/30 rounded-xl">
+      <div className="flex justify-center bg-cover items-center h-100 w-150 shadow-xl/30 rounded-xl"  style={{ backgroundImage: `url(${ichigoVastoLordeGif})` }}>
         <div className="w-full h-full bg-black/50 backdrop-blur-sm rounded-xl">
           <div className="flex gap-10 p-10 h-100 items-center">
             <div className="w-100">

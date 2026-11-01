@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ToastInfo from "../../toasts/ToastInfo";
 import { ToastContainer } from "react-toastify";
 
-const SignUpHeader = () => {
+const SignUpHeader = ({ search, setSearch }) => {
   return (
     <header className="flex h-18 bg-zinc-950 items-center p-2">
       <div className="w-1/3 p-4">
@@ -12,7 +12,10 @@ const SignUpHeader = () => {
       </div>
 
       <div className="w-1/3 flex items-center justify-center gap-4">
-        <button onClick={() => ToastInfo("You're already on the home page")} className="bg-zinc-800 p-3 rounded-full items-center justify-center hover:scale-105 transition-all cursor-pointer">
+        <button
+          onClick={() => ToastInfo("You're already on the home page")}
+          className="bg-zinc-800 p-3 rounded-full items-center justify-center hover:scale-105 transition-all cursor-pointer"
+        >
           <IoHomeSharp color="white" size={30} />
         </button>
         <ToastContainer />
@@ -20,6 +23,8 @@ const SignUpHeader = () => {
           type="text"
           className="bg-zinc-800 p-3 text-white placeholder:font-bold rounded-full w-full focus:outline-3 focus:outline-orange-500"
           placeholder="O que você deseja ouvir?"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
