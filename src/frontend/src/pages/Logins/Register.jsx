@@ -1,27 +1,23 @@
-// IMPORTS ICONS
 import { BsSpotify } from "react-icons/bs";
 import { Eye } from "lucide-react";
 import { EyeOff } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-// imports videos
-import IchigoGetsuga from "../assets/videos/getsuga.gif";
-import ToastSucess from "../components/toasts/ToastSucess";
+import UraharaBankai from "../../assets/gif/urahara.gif";
+import ToastSucess from "../../components/Toasts/ToastSucess";
 import { ToastContainer } from "react-toastify";
 
-const Login = () => {
-  // VIEW PASSWORD FUNCION AND USESTATE
+const Register = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const turnViewPass = () => {
     setViewPassword(!viewPassword);
   };
   return (
     <>
-      {/* BG FULL SCREEN */}
       <div
         className="bg-black w-full h-full absolute inset-0 bg-cover"
-        style={{ backgroundImage: `url(${IchigoGetsuga})` }}
+        style={{ backgroundImage: `url(${UraharaBankai})` }}
       ></div>
       <div className="w-dvw h-dvh flex flex-col justify-center items-center text-amber-50 z-10 backdrop-blur-md bg-black/50">
         {/* Container forms body */}
@@ -40,10 +36,19 @@ const Login = () => {
                 size={120}
               />
             </div>
-            <h1 className="text-6xl font-bold animate-pulse">Welcome Back</h1>
+            <h1 className="text-6xl font-bold animate-pulse">Sign up</h1>
           </div>
           {/* Body form */}
           <div className="flex flex-col gap-3 w-2xl">
+            <label className="font-bold" htmlFor="email-input">
+              Name
+            </label>
+            <input
+              id="name-input"
+              className="border border-white outline-none focus-visible:border-2 py-3 px-2 mb-2 invalid:border-red-600 rounded-full bg-black/50"
+              type="text"
+              placeholder="Your name"
+            />
             <label className="font-bold" htmlFor="email-input">
               Email
             </label>
@@ -55,18 +60,17 @@ const Login = () => {
             />
             <div className="flex flex-col gap-3 relative">
               <label className="font-bold" htmlFor="password-input">
-                Senha
+                Password
               </label>
               <input
                 id="password-input"
                 className="border border-white outline-none focus-visible:border-2 py-3 px-2 mb-2 invalid:border-red-600 bg-black/50 rounded-full"
                 type={viewPassword ? "text" : "password"}
-                placeholder="min length 8 character"
+                placeholder="Min length 8 character"
               />
               <button
                 onClick={turnViewPass}
                 className="absolute right-3 bottom-5"
-                type="submit"
               >
                 {viewPassword ? (
                   <Eye color="#e01b24" strokeWidth={1.5} />
@@ -76,22 +80,20 @@ const Login = () => {
               </button>
             </div>
             <button
-              onClick={ToastSucess("you're logged")}
+              onClick={ToastSucess("You're registred")}
               type="button"
               className="font-bold cursor-pointer bg-red-600 py-3 rounded-full text-2xl shadow-xl/30 hover:bg-red-700 transition-colors"
             >
-              Continue
+              Sign up
             </button>
-            <ToastContainer />  
+            <ToastContainer />
           </div>
           {/* dont have account */}
           <div className="flex flex-col gap-4 justify-center items-center">
-            <span className="text-zinc-400/60 font-bold">
-              Don't have an account?
-            </span>
-            <Link to="/register">
+            <span className="text-zinc-400/60 font-bold">Have an account?</span>
+            <Link to="/login">
               <button className="font-bold text-white cursor-pointer hover:text-zinc-400 transition-colors">
-                Sing up
+                Sign in
               </button>
             </Link>
           </div>
@@ -106,4 +108,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -1,7 +1,7 @@
 import { BsSpotify } from "react-icons/bs";
 import { IoHomeSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import ToastInfo from "../../toasts/ToastInfo";
+import ToastInfo from "../../Toasts/ToastInfo";
 import { ToastContainer } from "react-toastify";
 
 const SignUpHeader = ({ search, setSearch }) => {

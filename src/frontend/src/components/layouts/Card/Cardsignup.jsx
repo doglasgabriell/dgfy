@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import ichigoVastoLordeGif from "../../assets/videos/ichigo-vasto-lorde.gif"
+import ichigoVastoLordeGif from "../../../assets/gif/ichigo-vasto-lorde.gif"
 
 const Cardsignup = ({ hiddenCard }) => {
   return (

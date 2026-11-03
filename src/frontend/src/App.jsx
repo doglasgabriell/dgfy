@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import FooterSignup from "./components/layouts/footers/FooterSignup";
-import SignUpHeader from "./components/layouts/signup/SignUpHeader";
-import SingUpAside from "./components/layouts/signup/SingUpAside";
-import Cardsignup from "./components/cards/Cardsignup";
+import FooterSignup from "./components/layouts/Footers/FooterSignup";
+import SignUpHeader from "./components/layouts/Headers/SignUpHeader";
+import SingUpAside from "./components/layouts/Asides/SingUpAside";
+import Cardsignup from "./components/layouts/Card/Cardsignup";
 import Artists from "./components/Artists";
 import Songs from "./components/Songs";
 import artistsAPI from "./data/artistsAPI";
