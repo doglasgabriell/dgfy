@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import StandardHeader from "./components/layouts/Headers/StandardHeader";
-import PlayerOff from "./components/layouts/Footers/PlayerOff";
+import PlayerOff from "./components/layouts/footers/PlayerOff";
+
 
 const AppLogged = () => {
   return (

@@ -9,11 +9,29 @@ import {
   Volume2,
   Shuffle,
 } from "lucide-react";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 const PlayerOff = () => {
   // Input range
-  const [range, setRange] = useState(0);
+  const [range, setRange] = useState(5);
+  const [iconVolume, setIconeVolume] = useState(<VolumeX />);
+
+  useEffect(() => {
+    const volumeIcon = () => {
+      if (range < 2 && range > 0) {
+        setIconeVolume(<Volume color="#ff8000" />);
+      } else if (range >= 2 && range < 5) {
+        setIconeVolume(<Volume1 color="#ff8000" />);
+      } else if (range >= 5 && range <= 10) {
+        setIconeVolume(<Volume2 color="#ff8000" />);
+      } else {
+        setIconeVolume(<VolumeX color="#ff8000" />);
+      }
+    };
+
+    volumeIcon();
+  }, [range]);
 
   return (
     <div className="flex h-20 bg-zinc-950 mt-4 w-full justify-center items-center">
@@ -41,12 +59,13 @@ const PlayerOff = () => {
       {/* volume */}
       <div className="w-1/3 flex items-center justify-end gap-3 px-5">
         <Shuffle color="#ff8000" size={20} />
-        <Volume color="#ff8000" size={20} />
+        {/* <Volume color="#ff8000" size={20} /> */}
+        {iconVolume}
         <input
-          onChange={(event) => {
-            setRange(event.target.value);
+          onInput={(e) => {
+            setRange(e.target.value);
+            console.log(e.target.value);
           }}
-          value={range}
           id="volume"
           type="range"
           min={0}
