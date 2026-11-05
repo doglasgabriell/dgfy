@@ -1,4 +1,4 @@
-import { BsSpotify } from "react-icons/bs";
+import LogoLaranja from "../../../assets/icon/LogoLaranja.png";
 import { IoHomeSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import ToastInfo from "../../Toasts/ToastInfo";
@@ -8,7 +8,11 @@ const SignUpHeader = ({ search, setSearch }) => {
   return (
     <header className="flex h-18 bg-zinc-950 items-center p-2">
       <div className="w-1/3 p-4">
-        <BsSpotify className="text-orange-500" size={40} />
+        <img
+          src={LogoLaranja}
+          alt="Logo DGFY Laranja"
+          className="h-12 cursor-pointer"
+        />
       </div>
 
       <div className="w-1/3 flex items-center justify-center gap-4">

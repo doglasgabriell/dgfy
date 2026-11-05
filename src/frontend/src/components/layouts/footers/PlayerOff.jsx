@@ -9,8 +9,12 @@ import {
   Volume2,
   Shuffle,
 } from "lucide-react";
+import { useState } from "react";
 
 const PlayerOff = () => {
+  // Input range
+  const [range, setRange] = useState(0);
+
   return (
     <div className="flex h-20 bg-zinc-950 mt-4 w-full justify-center items-center">
       <div className="w-1/3 flex h-full"></div>
@@ -36,9 +40,18 @@ const PlayerOff = () => {
 
       {/* volume */}
       <div className="w-1/3 flex items-center justify-end gap-3 px-5">
-        <Shuffle color="#ff8000"  size={20}/>
+        <Shuffle color="#ff8000" size={20} />
         <Volume color="#ff8000" size={20} />
-        <input type="range" min={0} max={10}/>
+        <input
+          onChange={(event) => {
+            setRange(event.target.value);
+          }}
+          value={range}
+          id="volume"
+          type="range"
+          min={0}
+          max={10}
+        />
       </div>
     </div>
   );
