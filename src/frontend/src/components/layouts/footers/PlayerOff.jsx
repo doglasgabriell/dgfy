@@ -16,7 +16,6 @@ const PlayerOff = () => {
   // Input range
   const [range, setRange] = useState(5);
   const [iconVolume, setIconeVolume] = useState(<VolumeX />);
-
   useEffect(() => {
     const volumeIcon = () => {
       if (range < 2 && range > 0) {
@@ -29,12 +28,15 @@ const PlayerOff = () => {
         setIconeVolume(<VolumeX color="#ff8000" />);
       }
     };
-
     volumeIcon();
   }, [range]);
 
+  // Toggle shuffle
+  const [shuffle, setShuffle] = useState(true);
+  const swithShuffle = () => setShuffle(!shuffle);
+
   return (
-    <div className="flex h-20 bg-zinc-950 mt-4 w-full justify-center items-center">
+    <div className="flex h-1/5 bg-zinc-950 p-2 w-full justify-center items-center">
       <div className="w-1/3 flex h-full"></div>
 
       {/* main player */}
@@ -58,10 +60,28 @@ const PlayerOff = () => {
 
       {/* volume */}
       <div className="w-1/3 flex items-center justify-end gap-3 px-5">
-        <Shuffle color="#ff8000" size={20} />
+        <button className="cursor-pointer" onClick={swithShuffle}>
+          {shuffle ? (
+            <Shuffle
+              className="hover:scale-110 transition-all"
+              color="#ff8000"
+              size={20}
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center relative">
+              <Shuffle
+                className="hover:scale-110 transition-all"
+                color="white"
+                size={20}
+              />
+              <span className="text-white absolute top-0 text-3xl ">.</span>
+            </div>
+          )}
+        </button>
         {/* <Volume color="#ff8000" size={20} /> */}
         {iconVolume}
         <input
+          className="cursor-pointer range accent-orange-500"
           onInput={(e) => {
             setRange(e.target.value);
             console.log(e.target.value);

@@ -9,6 +9,7 @@ import ErrorPage from "./routes/ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Register from "./pages/Logins/Register.jsx";
 import AppLogged from "./AppLogged.jsx";
+import HomePage from "./pages/Home/HomePage.jsx";
 
 // função browserRouter
 const router = createBrowserRouter([
@@ -26,9 +27,14 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/home-page",
+    path: "/home",
     element: <AppLogged />,
-    children: [{}],
+    children: [
+      {
+        path: "home-page",
+        element: <HomePage />
+      },
+    ],
   },
 ]);
 
