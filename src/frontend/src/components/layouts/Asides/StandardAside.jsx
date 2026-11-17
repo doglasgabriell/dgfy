@@ -1,4 +1,4 @@
-import { Library, PanelLeftOpen, Plus, Search } from "lucide-react";
+import { Library, PanelLeftOpen, Plus } from "lucide-react";
 import { useState } from "react";
 import PlaylistTeste from "../../../data/PlaylistTeste";
 import PlaylistLittleCard from "./PlaylistLittleCard";
