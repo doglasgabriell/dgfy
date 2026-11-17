@@ -4,13 +4,13 @@ import PlayerOff from "./components/layouts/Footers/PlayerOff";
 
 const AppLogged = () => {
   return (
-    <div className="h-screen flex flex-col relative bg-zinc-950">
+    <div className="h-screen flex flex-col bg-zinc-950">
       <StandardHeader />
-      <div className="flex flex-col w-full h-full p-3">
-        <main className="flex h-4/5">
-          <Outlet />
-        </main>
-      </div>
+
+      <main className="flex flex-1 flex-col p-2 h-full overflow-y-auto bg-linear-to-b bg-zinc-950 rounded-lg ">
+        <Outlet />
+      </main>
+
       {/* Fazer verificacao caso o usuario n clicar na musica o player fica desligado */}
       <PlayerOff />
     </div>
