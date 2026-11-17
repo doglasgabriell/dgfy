@@ -3,6 +3,7 @@ import { useState } from "react";
 import PlaylistTeste from "../../../data/PlaylistTeste";
 import PlaylistLittleCard from "./PlaylistLittleCard";
 import LibraryExpanded from "../../LibraryExpanded";
+import { PanelLeftClose } from "lucide-react";
 
 const StandardAside = () => {
   // Extender janela playlist aside
@@ -17,19 +18,16 @@ const StandardAside = () => {
   return windowPlaylist ? (
     <aside className="flex flex-col p-5 w-80 bg-linear-to-b from-zinc-800 to-zinc-950 gap-6 rounded-lg">
       <div className="flex w-full justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex gap-2 items-center">
           <button
             className="cursor-pointer"
             type="button"
             onClick={openPlaylist}
-            onMouseOver={toggleIconPlaylistFalse}
-            onMouseOut={toggleIconPlaylistTrue}
           >
-            {iconPlaylist ? (
-              <Library className="text-orange-500" size={30} />
-            ) : (
-              <PanelLeftOpen className="text-orange-500" size={30} />
-            )}
+            <PanelLeftClose
+              className="text-orange-500 hover:scale-110 transition-all "
+              size={30}
+            />
           </button>
 
           <span className="text-zinc-300 font-bold">Your library</span>
@@ -55,47 +53,16 @@ const StandardAside = () => {
       </div>
 
       <div className="w-full flex flex-col overflow-y-scroll ">
-        {/* <div className="flex relative items-center">
-          <Search
-            className="z-10 text-zinc-500 flex left-1 absolute"
-            size={17}
-          />
-          <input type="text" className="bg-zinc-700 py-0.5 absolute rounded-sm ps-6 text-zinc-500" placeholder="Search in your library" />
-        </div> */}
-
-        {
-          PlaylistTeste.map((p) => (
-            <LibraryExpanded 
-              key={p.id}
-              image={p.pic_url}
-              name={p.name}
-              type={p.type}
-              description={p.description}
-            />
-          ))
-        }
-        
-      </div>
-
-      {/* <div className="w-full flex flex-col justify-center items-center gap-4 p-2">
-
-        <div className="w-max h-max cursor-pointer bg-zinc-600/60 flex items-center justify-center rounded-full group/addition hover:bg-zinc-600 transition-all">
-          <Plus
-            className="text-orange-500/60 group-hover/addition:text-orange-500 transition-all p-1"
-            size={30}
-          />
-        </div>
-      </div>
-
-      <div className="max-h-full overflow-y-scroll">
-        {PlaylistTeste.map((playlist) => (
-          <PlaylistLittleCard
-            key={playlist.id}
-            description={playlist.name}
-            image={playlist.pic_url}
+        {PlaylistTeste.map((p) => (
+          <LibraryExpanded
+            key={p.id}
+            image={p.pic_url}
+            name={p.name}
+            type={p.type}
+            description={p.description}
           />
         ))}
-      </div> */}
+      </div>
     </aside>
   ) : (
     <aside className="flex flex-col p-1 w-20 bg-linear-to-b from-zinc-800 to-zinc-950 gap-4 rounded-lg">

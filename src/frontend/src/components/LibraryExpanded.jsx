@@ -15,5 +15,5 @@ const LibraryExpanded = ({ image, name, type, description }) => {
     </div>
   );
 };
-
+  
 export default LibraryExpanded;
