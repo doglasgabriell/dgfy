@@ -20,7 +20,7 @@ const StandardHeader = () => {
   const tapUserProfile = () => setTapProfile(!tapProfile);
 
   return (
-    <div className="bg-zinc-950 h-1/10 p-2 w-full flex">
+    <div className="bg-zinc-950 h-[5%] p-2 w-full flex">
       {/* Icon Page */}
       <div className="w-1/3 h-full">
         <img
