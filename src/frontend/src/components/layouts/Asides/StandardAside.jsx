@@ -16,7 +16,7 @@ const StandardAside = () => {
   const toggleIconPlaylistTrue = () => setIconPlaylist(true);
 
   return windowPlaylist ? (
-    <aside className="flex flex-col p-5 w-80 bg-linear-to-b from-zinc-800 to-zinc-950 gap-6 rounded-lg">
+    <aside className="flex flex-col p-5 w-sm bg-linear-to-b from-zinc-800 to-zinc-950 gap-6 rounded-lg">
       <div className="flex w-full justify-between items-center">
         <div className="flex gap-2 items-center">
           <button

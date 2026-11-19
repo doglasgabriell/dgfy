@@ -7,7 +7,7 @@ const AppLogged = () => {
     <div className="h-screen flex flex-col bg-zinc-950">
       <StandardHeader />
 
-      <main className="flex flex-1 flex-col p-3 h-full overflow-y-auto bg-linear-to-b bg-zinc-950 rounded-lg ">
+      <main className="flex flex-1   flex-col p-3 overflow-y-auto bg-linear-to-b bg-zinc-950 rounded-lg ">
         <Outlet />
       </main>
 
