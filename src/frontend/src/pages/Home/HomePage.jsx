@@ -1,8 +1,9 @@
-import { ChevronLeft } from "lucide-react";
+import AsideDetailsSong from "../../components/layouts/Asides/AsideDetailsSong";
 import StandardAside from "../../components/layouts/Asides/StandardAside";
 import RecentsHome from "../../components/layouts/Card/RecentsHome";
 import MediaSection from "../../components/layouts/Section/MediaSection";
 import RecentsHomeApi from "../../data/RecentsHomeApi";
+import ImageFake from "../../assets/coverArtists/Doglas & lavinia.png"
 
 const HomePage = () => {
   return (
@@ -24,7 +25,7 @@ const HomePage = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-4 gap-3 grid-rows-[55px_55px]">
+        <div className="grid grid-cols-4 gap-3 grid-rows-[75px_75px]">
           {RecentsHomeApi.map((r) => (
             <RecentsHome
               key={r.id}
@@ -43,9 +44,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="min-w-0 w-10 rounded-md group/arrowActive cursor-pointer bg-linear-to-b from-zinc-900 to-zinc-950 flex justify-center items-center p-2 transition-all duration-200">
-        <ChevronLeft className="text-white/40 group-hover/arrowActive:text-white transition duration-200" />
-      </div>
+      {/* dados estaticos */}
+      <AsideDetailsSong year={"2026"} />
     </div>
   );
 };

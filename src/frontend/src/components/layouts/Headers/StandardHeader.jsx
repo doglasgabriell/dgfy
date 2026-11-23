@@ -71,7 +71,7 @@ const StandardHeader = () => {
               size={35}
             />
             {tapProfile && (
-              <div className="absolute w-80 p-1 top-12.5 -right-5.5 flex flex-col bg-[#282828] rounded-sm">
+              <div className="absolute z-10 w-80 p-1 top-12.5 -right-5.5 flex flex-col bg-[#282828] rounded-sm">
                 <div className="h-8 px-2 w-full flex items-center hover:bg-zinc-700 hover:rounded-sm transition-all cursor-pointer">
                   <span className=" text-white font-bold">Perfil</span>
                 </div>
