@@ -3,7 +3,7 @@ import StandardAside from "../../components/layouts/Asides/StandardAside";
 import RecentsHome from "../../components/layouts/Card/RecentsHome";
 import MediaSection from "../../components/layouts/Section/MediaSection";
 import RecentsHomeApi from "../../data/RecentsHomeApi";
-import ImageTeste from "../../assets/coverArtists/Doglas & lavinia.png"
+import ImageTeste from "../../assets/coverArtists/Doglas & lavinia.png";
 
 const HomePage = () => {
   return (
@@ -45,7 +45,13 @@ const HomePage = () => {
       </div>
 
       {/* dados estaticos */}
-      <AsideDetailsSong namePlaylist={"TIK TOK MELHORES DO DOGLAS GOSTOSO"} image={ImageTeste} nameAutor={"HG NO BEAT"} nameSong={"Chapolin"} imgNext={ImageTeste} autorSongNext={"Autor Teste"} titleSongNext={"Titulo de Teste"}/>
+      <AsideDetailsSong
+        namePlaylist={"MINHA VIDA"}
+        image={ImageTeste}
+        nameAutor={"Doglinhas"}
+        nameSong={"DG NO BEAT"}
+        imgNext={ImageTeste}
+      />
     </div>
   );
 };

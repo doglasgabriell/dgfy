@@ -5,6 +5,8 @@ import {
   PanelLeftOpen,
 } from "lucide-react";
 import { useState } from "react";
+import NexCard from "../Card/NexCard";
+import NextSong from "../../../data/NextSong";
 const AsideDetailsSong = ({
   image,
   year,
@@ -12,66 +14,60 @@ const AsideDetailsSong = ({
   nameSong,
   description,
   nameAutor,
-  imgNext,
-  descriptionNext,
-  autorSongNext,
-  titleSongNext
 }) => {
   const [openAside, setOpenAside] = useState(false);
   const toggle = () => setOpenAside(!openAside);
 
   return openAside ? (
-    <div className="min-w-0 w-[20%] group/textclip rounded-md group/arrowActive cursor-pointer bg-linear-to-b from-zinc-900 to-zinc-950 p-4 flex flex-col  transition-all duration-200">
+    // Aside completo
+    <div className="min-w-0 w-[20%] h-full group/textclip rounded-md group/arrowActive bg-linear-to-b from-zinc-900 to-zinc-950 p-4 flex flex-col  transition-all duration-200">
+      {/* TITULO SUPERIOR COM 5% ASIDE PRINCIPAL */}
       <div className="flex gap-3 w-full h-[5%] items-center justify-around mb-4">
         <PanelLeftOpen
           onClick={toggle}
-          className="w-0 text-white/60 group-hover/textclip:w-[10%] transition-all duration-200 hover:text-white"
+          className="w-0 text-white/60 group-hover/textclip:w-[10%] transition-all duration-200 hover:text-white cursor-pointer"
         />
-        <span className="w-full group-hover/textclip:w-[80%] font-bold truncate text-clip text-white hover:underline decoration-2 underline-offset-2">
+        <span className="w-full cursor-pointer group-hover/textclip:w-[80%] font-bold truncate text-clip text-white hover:underline decoration-2 underline-offset-2">
           {namePlaylist}
         </span>
-        <Maximize2 className="w-0 group-hover/textclip:w-[10%] text-white/60 transition-all duration-200 hover:text-white hover:scale-105" />
+        <Maximize2 className="w-0 cursor-pointer group-hover/textclip:w-[10%] text-white/60 transition-all duration-200 hover:text-white hover:scale-105" />
       </div>
 
+      {/* IMAGEM OCUPANDO 50% ASIDE PRINCIPAL */}
       <div
-        className={`w-full h-[50%] bg-cover bg-center rounded-lg mb-3`}
+        className={`w-full h-[50%] bg-cover bg-center cursor-pointer rounded-lg mb-3`}
         style={{ backgroundImage: `url(${image})` }}
       ></div>
 
-      <div className="flex justify-between items-center mb-4">
+      {/* INFORMACOES DA MUSICA OCUPANDO 5%  ASIDE PRINCIPAL*/}
+      <div className="flex justify-between h-[5%] items-center mb-4">
         <div className="flex flex-col">
-          <span className="text-white font-bold text-2xl hover:underline">
+          <span className="text-white cursor-pointer font-bold text-2xl hover:underline">
             {nameSong}
           </span>
-          <span className="text-white/60 hover:underline decoration-white">
+          <span className="text-white/60 hover:underline cursor-pointer decoration-white">
             {nameAutor}
           </span>
         </div>
 
-        <CirclePlus className="text-white/60 hover:text-white hover:scale-105 transition-all" />
+        <CirclePlus className="text-white/60 cursor-pointer hover:text-white hover:scale-105 transition-all" />
       </div>
 
-      {/* SECTION A SEGUIR */}
-      <div className="flex flex-col p-5 bg-white/10 w-full h-[30%] rounded-xl ">
+      {/* SECTION A SEGUIR OCUPANDO 40% DO ASIDE PRINCIPAL PEGANDO O RESTANTE E TOTALIZANDO OS 100% DO ASIDE*/}
+      <div className="flex flex-col p-5 bg-white/10 w-full h-[40%] rounded-xl ">
         <div className="w-full h-[5%] mb-4">
           <span className="text-white font-bold ">A seguir</span>
         </div>
 
-        <div className="flex flex-col h-[25%] w-full">
-          <div className="w-full h-[30%] flex gap-3 ">
-            <img className="rounded-sm" src={imgNext} alt={descriptionNext} />
-            <div className="flex flex-col justify-center">
-              <span className="text-white">{titleSongNext}</span>
-              <span className="text-white/60">{autorSongNext}</span>
-            </div>
-          </div>
-          <div className="w-full h-[30%] flex gap-3 ">
-            <img className="rounded-sm" src={imgNext} alt={descriptionNext} />
-            <div className="flex flex-col justify-center">
-              <span className="text-white">{titleSongNext}</span>
-              <span className="text-white/60">{autorSongNext}</span>
-            </div>
-          </div>
+        <div className="flex flex-col justify-center h-[95%] w-full">
+          {NextSong.map((n) => (
+            <NexCard
+              key={n.id}
+              cover={n.cover}
+              name={n.title}
+              description={n.description}
+            />
+          ))}
         </div>
       </div>
     </div>
