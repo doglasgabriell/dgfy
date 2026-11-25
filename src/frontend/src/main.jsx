@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Register from "./pages/Logins/Register.jsx";
 import AppLogged from "./AppLogged.jsx";
 import HomePage from "./pages/Home/HomePage.jsx";
+import SongView from "./pages/Song/SongView.jsx";
 
 // função browserRouter
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "home-page",
         element: <HomePage />
       },
+      {
+        path: "song-view",
+        element: <SongView />
+      }
     ],
   },
 ]);
