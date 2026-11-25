@@ -22,7 +22,7 @@ const AsideDetailsSong = ({
 
   return openAside ? (
     // Aside completo
-    <div className="min-w-0 w-[20%] h-full group/textclip rounded-md group/arrowActive bg-linear-to-b from-zinc-900 to-zinc-950 p-4 flex flex-col  transition-all duration-200">
+    <div className="min-w-0 w-[20%] h-full group/textclip rounded-md group/arrowActive bg-linear-to-b from-zinc-900 to-zinc-950 p-4 flex flex-col  transition-all duration-300">
       {/* TITULO SUPERIOR COM 5% ASIDE PRINCIPAL */}
       <div className="flex gap-3 w-full h-[5%] items-center justify-around mb-4">
         <PanelLeftOpen

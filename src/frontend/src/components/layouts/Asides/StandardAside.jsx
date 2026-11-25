@@ -16,7 +16,7 @@ const StandardAside = () => {
   const toggleIconPlaylistTrue = () => setIconPlaylist(true);
 
   return windowPlaylist ? (
-    <aside className="flex flex-col p-5 w-sm bg-linear-to-b from-zinc-800 to-zinc-950 gap-6 rounded-lg">
+    <aside className="flex group/libraryIcon flex-col p-5 w-sm bg-linear-to-b from-zinc-800 to-zinc-950 gap-6 rounded-lg transition-all duration-300">
       <div className="flex w-full justify-between items-center">
         <div className="flex gap-2 items-center">
           <button
@@ -25,7 +25,7 @@ const StandardAside = () => {
             onClick={openPlaylist}
           >
             <PanelLeftClose
-              className="text-orange-500 hover:scale-110 transition-all "
+              className="hidden group-hover/libraryIcon:flex  text-orange-500 hover:scale-110 transition-all duration-300 "
               size={30}
             />
           </button>
@@ -65,7 +65,7 @@ const StandardAside = () => {
       </div>
     </aside>
   ) : (
-    <aside className="flex flex-col p-1 w-20 bg-linear-to-b from-zinc-800 to-zinc-950 gap-4 rounded-lg">
+    <aside className="flex flex-col p-1 w-20 bg-linear-to-b from-zinc-800 to-zinc-950 gap-4 rounded-lg transition-all duration-300">
       {/* shadow-[0px_10px_7px_0px_rgb(0_0_255/0.2)] --> Usar para adicionar na div abaixo futuramente */}
       <div className="w-full flex flex-col justify-center items-center gap-4 p-2">
         <button
