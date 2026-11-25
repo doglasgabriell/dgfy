@@ -36,7 +36,7 @@ const HomePage = () => {
           ))}
         </div>
 
-        <div className="flex flex-col max-w-full gap-10">
+        <div scrollSection className="flex flex-col max-w-full gap-10">
           <MediaSection title={"Suas músicas abaixadas"} />
           <MediaSection title={"Audio livros para você"} />
           <MediaSection title={"Músicas"} />
