@@ -36,7 +36,7 @@ const PlayerOff = () => {
   const swithShuffle = () => setShuffle(!shuffle);
 
   return (
-    <div className="flex h-[5%] bg-zinc-950 p-2 w-full justify-center items-center">
+    <div className="flex bg-zinc-950 p-2 w-full justify-center items-center">
       <div className="w-1/3 flex h-full"></div>
 
       {/* main player */}

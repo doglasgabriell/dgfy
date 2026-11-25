@@ -19,7 +19,7 @@ const MediaSection = ({ title }) => {
         </button>
       </div>
 
-      <div className="h-full w-full flex overflow-auto">
+      <div className="h-full w-full -ml-3 flex overflow-auto">
         {PlaylistTeste.map((p) => (
           <MediaCard
             key={p.id}

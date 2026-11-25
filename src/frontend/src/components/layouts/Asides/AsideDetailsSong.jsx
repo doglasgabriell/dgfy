@@ -7,16 +7,18 @@ import {
 import { useState } from "react";
 import NexCard from "../Card/NexCard";
 import NextSong from "../../../data/NextSong";
+import { FcLike } from "react-icons/fc";
 const AsideDetailsSong = ({
   image,
-  year,
   namePlaylist,
   nameSong,
-  description,
   nameAutor,
 }) => {
   const [openAside, setOpenAside] = useState(false);
   const toggle = () => setOpenAside(!openAside);
+
+  const [ liked, setLiked ] = useState(false);
+  const toggleLike = () => setLiked(!liked);
 
   return openAside ? (
     // Aside completo
@@ -35,12 +37,12 @@ const AsideDetailsSong = ({
 
       {/* IMAGEM OCUPANDO 50% ASIDE PRINCIPAL */}
       <div
-        className={`w-full h-[50%] bg-cover bg-center cursor-pointer rounded-lg mb-3`}
+        className={`w-full h-[50%] bg-cover bg-center object-cover cursor-pointer rounded-lg mb-3`}
         style={{ backgroundImage: `url(${image})` }}
       ></div>
 
-      {/* INFORMACOES DA MUSICA OCUPANDO 5%  ASIDE PRINCIPAL*/}
-      <div className="flex justify-between h-[5%] items-center mb-4">
+      {/* INFORMACOES DA MUSICA OCUPANDO 10%  ASIDE PRINCIPAL*/}
+      <div className="flex justify-between h-[10%] items-center mb-4">
         <div className="flex flex-col">
           <span className="text-white cursor-pointer font-bold text-2xl hover:underline">
             {nameSong}
@@ -50,16 +52,22 @@ const AsideDetailsSong = ({
           </span>
         </div>
 
-        <CirclePlus className="text-white/60 cursor-pointer hover:text-white hover:scale-105 transition-all" />
+        <button onClick={toggleLike}>
+          {liked ? (
+            <FcLike className="cursor-pointer hover:scale-105 transition-all size-6" />
+          ) : (
+            <CirclePlus className="text-white/60 cursor-pointer hover:text-white hover:scale-105 transition-all" />
+          )}
+        </button>
       </div>
 
-      {/* SECTION A SEGUIR OCUPANDO 40% DO ASIDE PRINCIPAL PEGANDO O RESTANTE E TOTALIZANDO OS 100% DO ASIDE*/}
-      <div className="flex flex-col p-5 bg-white/10 w-full h-[40%] rounded-xl ">
-        <div className="w-full h-[5%] mb-4">
-          <span className="text-white font-bold ">A seguir</span>
+      {/* SECTION A SEGUIR OCUPANDO 35% DO ASIDE PRINCIPAL PEGANDO O RESTANTE E TOTALIZANDO OS 100% DO ASIDE*/}
+      <div className="flex flex-col p-4 gap-2 bg-white/10 w-full min-w-0 h-auto rounded-xl ">
+        <div className="w-full h-[10%] flex">
+          <span className="text-white font-bold">Next in queue</span>
         </div>
 
-        <div className="flex flex-col justify-center h-[95%] w-full">
+        <div className="flex flex-col justify-center h-full w-full">
           {NextSong.map((n) => (
             <NexCard
               key={n.id}

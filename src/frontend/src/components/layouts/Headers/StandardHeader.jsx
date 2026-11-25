@@ -20,9 +20,9 @@ const StandardHeader = () => {
   const tapUserProfile = () => setTapProfile(!tapProfile);
 
   return (
-    <div className="bg-zinc-950 h-[5%] p-2 w-full flex">
+    <div className="bg-zinc-950 p-3 w-full flex">
       {/* Icon Page */}
-      <div className="w-1/3 h-full">
+      <div className="w-1/3 h-full px-4">
         <img
           src={LogoLaranja}
           alt="Logo DGFY Laranja"
