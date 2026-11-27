@@ -12,6 +12,8 @@ import AppLogged from "./AppLogged.jsx";
 import HomePage from "./pages/Home/HomePage.jsx";
 import SongView from "./pages/Song/SongView.jsx";
 import { ExpandedProvider } from "./context/ExpandedContext.jsx";
+import PlaylistPage from "./pages/Playlists/PlaylistPage.jsx";
+import AppDefault from "./AppDefault.jsx";
 
 // função browserRouter
 const router = createBrowserRouter([
@@ -42,6 +44,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "default",
+    element: <AppDefault />,
+    children: [
+      {
+        path: "playlist",
+        element: <PlaylistPage />
+      }
+    ]
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
