@@ -6,6 +6,8 @@ import { FaCheckCircle } from "react-icons/fa";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { ExpandedContext } from "../../context/ExpandedContext";
 
+// TODO FAZER FUNÇÃO PARA VERIFICAR O TEMPO EM QUE O MOUSE ESTÁ OCIOSO
+
 const SongView = () => {
   // Context Expanded
   const {setExpanded} = useContext(ExpandedContext);
