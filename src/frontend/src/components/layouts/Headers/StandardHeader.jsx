@@ -8,7 +8,8 @@ import { Sun } from "lucide-react";
 import { CircleUser } from "lucide-react";
 
 // Import Hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ExpandedContext } from "../../../context/ExpandedContext";
 
 const StandardHeader = () => {
   // DARK MODE AND LIGHT MODE
@@ -19,8 +20,11 @@ const StandardHeader = () => {
   const [tapProfile, setTapProfile] = useState(false);
   const tapUserProfile = () => setTapProfile(!tapProfile);
 
+  // CONTEXT EXPANDEDE
+  const { expanded } = useContext(ExpandedContext);
+
   return (
-    <div className="bg-zinc-950 p-3 w-full flex">
+    <div className={`bg-zinc-950 min-h-0 w-full flex ${expanded ? "max-h-0 overflow-hidden opacity-0 p-0" : "max-h-24 opacity-100  p-3"} transition-[height_opacity] duration-1000`}>
       {/* Icon Page */}
       <div className="w-1/3 h-full px-4">
         <img

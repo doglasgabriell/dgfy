@@ -1,16 +1,23 @@
 import { CirclePlus, Minimize2 } from "lucide-react";
 import ZoroWallpaper from "../../assets/gif/zoro-monochrome-one-piece-moewalls-com.mp4";
 import ImagemTeste from "../../assets/coverArtists/Doglas & lavinia.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { Bounce, ToastContainer, toast } from "react-toastify";
+import { ExpandedContext } from "../../context/ExpandedContext";
 
 const SongView = () => {
+  // Context Expanded
+  const {setExpanded} = useContext(ExpandedContext);
+  const toggleExpandedFalse = () => setExpanded(false);
+  const toggleExpandedTrue = () => setExpanded(true);
+
   const [checkPlaylist, setCheckPlaylist] = useState(false);
   const checkFn = () => {
     const checkedIsTrue = !checkPlaylist;
     setCheckPlaylist(checkedIsTrue);
     if (checkedIsTrue) {
+      // Adicionar o nome da playlist que foi adicionada
       return toast.success("Adicionado a playlist", {
         position: "bottom-right",
         autoClose: 5000,
@@ -38,7 +45,10 @@ const SongView = () => {
   };
 
   return (
-    <div className="h-screen min-w-0 flex flex-col items-center relative p-10">
+    <div className="h-full min-h-0 min-w-0 w-full flex flex-col items-center relative p-10"
+    onMouseOver={toggleExpandedFalse}
+    onMouseOut={toggleExpandedTrue}
+    >
       <video
         autoPlay
         loop
@@ -49,7 +59,7 @@ const SongView = () => {
         <source src={ZoroWallpaper} className="rounded-xl" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 w-full h-full bg-black/70 backdrop-blur-lg rounded-xl"></div>
+      <div className="absolute inset-0 w-full h-full bg-black/50 backdrop-blur-lg rounded-xl"></div>
 
       <div className=" w-full h-[10%] flex justify-between z-10">
         <span className="text-white font-bold">{"NOME MÚSICA"}</span>

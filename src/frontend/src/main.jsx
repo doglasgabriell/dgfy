@@ -11,6 +11,7 @@ import Register from "./pages/Logins/Register.jsx";
 import AppLogged from "./AppLogged.jsx";
 import HomePage from "./pages/Home/HomePage.jsx";
 import SongView from "./pages/Song/SongView.jsx";
+import { ExpandedProvider } from "./context/ExpandedContext.jsx";
 
 // função browserRouter
 const router = createBrowserRouter([
@@ -33,18 +34,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "home-page",
-        element: <HomePage />
+        element: <HomePage />,
       },
       {
         path: "song-view",
-        element: <SongView />
-      }
+        element: <SongView />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ExpandedProvider>
+      <RouterProvider router={router} />
+    </ExpandedProvider>
   </StrictMode>,
 );

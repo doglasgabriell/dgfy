@@ -10,7 +10,8 @@ import {
   Shuffle,
 } from "lucide-react";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ExpandedContext } from "../../../context/ExpandedContext";
 
 const PlayerOff = () => {
   // Input range
@@ -35,8 +36,11 @@ const PlayerOff = () => {
   const [shuffle, setShuffle] = useState(true);
   const swithShuffle = () => setShuffle(!shuffle);
 
+  // EXPANDED CONTEXT
+  const { expanded } = useContext(ExpandedContext);
+
   return (
-    <div className="flex bg-zinc-950 p-2 w-full justify-center items-center">
+    <div className={`flex bg-zinc-950 w-full justify-center items-center ${expanded ? "max-h-0 opacity-0 overflow-hidden p-0" : "max-h-24 opacity-100 p-2 "} transition-[height_opacity] duration-1000`}>
       <div className="w-1/3 flex h-full"></div>
 
       {/* main player */}
